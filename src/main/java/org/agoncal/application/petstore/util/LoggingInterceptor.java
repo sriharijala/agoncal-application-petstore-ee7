@@ -34,6 +34,10 @@ public class LoggingInterceptor implements Serializable
     @AroundInvoke
     private Object intercept(InvocationContext ic) throws Exception
     {
+        if (logger == null) {
+            logger = Logger.getLogger(LoggingInterceptor.class.getName());
+        }
+
         logger.entering(ic.getTarget().getClass().getName(), ic.getMethod().getName());
         logger.info(">>> " + ic.getTarget().getClass().getName() + "-" + ic.getMethod().getName());
         try 

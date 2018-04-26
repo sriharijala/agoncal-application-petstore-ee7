@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module name="org.jgroups" xmlns="urn:jboss:module:1.3">
+
+    <resources>
+        <resource-root path="jgroups-4.0.11.Final.jar"/>
+    </resources>
+
+    <dependencies>
+        <module name="javax.api"/>
+        <module name="org.jgroups.extension"/>
+        <module name="org.jgroups.azure"/>
+        <module name="org.jgroups.kubernetes"/>
+        <module name="org.wildfly.security.elytron-private" services="import"/>
+    </dependencies>
+</module>

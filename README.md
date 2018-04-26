@@ -25,6 +25,10 @@ The only external framework used are [Arquillian](http://arquillian.org/), [Twit
 
 Being Maven centric, you can compile and package it without tests using `mvn clean compile -Dmaven.test.skip=true`, `mvn clean package -Dmaven.test.skip=true` or `mvn clean install -Dmaven.test.skip=true`. Once you have your war file, you can deploy it.
 
+## Create Wildfly docker image
+
+docker build -f docker/Dockerfile -t banzaicloud/wildfly-jee-petstore:0.1.0 .
+
 ### Test with Arquillian
 
 Launching tests under [WildFly](http://www.wildfly.org/) is straight forward. You only have to launch WidlFly and execute the tests using the Maven profile :
