@@ -11,6 +11,7 @@ import javax.xml.bind.annotation.XmlTransient;
 
 @Entity
 @Cacheable
+@Table(name = "product")
 @NamedQueries({
          // TODO fetch doesn't work with GlassFish
          // @NamedQuery(name = Product.FIND_BY_CATEGORY_NAME, query =

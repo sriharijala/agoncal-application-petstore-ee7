@@ -17,6 +17,7 @@ import org.agoncal.application.petstore.constraints.Price;
  */
 
 @Entity
+@Table(name = "item")
 @Cacheable
 @NamedQueries({
          @NamedQuery(name = Item.FIND_BY_PRODUCT_ID, query = "SELECT i FROM Item i WHERE i.product.id = :productId"),

@@ -12,6 +12,9 @@ import javax.inject.Inject;
 import javax.inject.Named;
 import java.io.Serializable;
 import java.util.List;
+import java.util.Random;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  * @author Antonio Goncalves
@@ -25,6 +28,9 @@ import java.util.List;
 @Loggable
 @CatchException
 public class CatalogBean extends AbstractBean implements Serializable {
+
+    static Logger logger = Logger.getLogger(CatalogBean.class.getName());
+
 
     // ======================================
     // =             Attributes             =
@@ -69,6 +75,16 @@ public class CatalogBean extends AbstractBean implements Serializable {
      */
     public String doSearch() {
         items = catalogService.searchItems(keyword);
+        try {
+            Random rand = new Random();
+            int waitTime = rand.nextInt(30000);
+            logger.info("XXX beforeSleep " + waitTime);
+            Thread.sleep(waitTime);
+        } catch (InterruptedException e) {
+            logger.log(Level.WARNING, "Sleep interupted", e);
+        }
+        logger.info("XXX afterSleep");
+
 //        return "searchresult";
         return "searchresult.faces&faces-redirect=true";
 //        return "searchresult.faces?keyword=" + keyword + "&faces-redirect=true";

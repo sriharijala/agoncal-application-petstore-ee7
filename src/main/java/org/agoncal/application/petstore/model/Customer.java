@@ -24,6 +24,7 @@ import sun.misc.BASE64Encoder;
  */
 
 @Entity
+@Table(name = "customer")
 @NamedQueries({
          @NamedQuery(name = Customer.FIND_BY_LOGIN, query = "SELECT c FROM Customer c WHERE c.login = :login"),
          @NamedQuery(name = Customer.FIND_BY_EMAIL, query = "SELECT c FROM Customer c WHERE c.email = :email"),

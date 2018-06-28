@@ -14,6 +14,7 @@ import javax.xml.bind.annotation.XmlRootElement;
 
 @Entity
 @Cacheable
+@Table(name = "category")
 @NamedQueries({
          // TODO fetch doesn't work with GlassFIsh
          // @NamedQuery(name = Category.FIND_BY_NAME, query =

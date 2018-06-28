@@ -10,6 +10,7 @@ import javax.xml.bind.annotation.XmlRootElement;
 
 @Entity
 @Cacheable
+@Table(name = "country")
 @XmlRootElement
 public class Country implements Serializable
 {
